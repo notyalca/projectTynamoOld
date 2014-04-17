@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title><%= @title %></title>
+  <link rel="shortcut icon" href="/static/favicon.ico" />
+</head>
+<body>
+  <h3>Tynamo Routes</h3>
+  <div>
+    <p>The routes are being read from: <code><%= @path %></code></p>
+    <ul>
+       <%= lc { key, value} inlist @keyValue do %>
+       <li>/sim<%= key %> : <%= value %></li>
+       <% end %>
+    </ul>
+  </div>
+</body>
+</html>

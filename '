@@ -52,11 +52,11 @@ defmodule ApplicationRouter do
     foundTuple = List.keyfind(KeyValue.mapTo(RoutesFile.routes),path,0)
     if foundTuple do
       filename = elem foundTuple,1
-      #IO.puts filename
       conn.resp 200, File.read!("/home/ajclayton/Dropbox/projectTynamo/"<>filename)
     else
       conn.status 404
     end
+    #IO.puts filename
   end
 
   get "routes" do
