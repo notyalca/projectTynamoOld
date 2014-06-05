@@ -1,6 +1,9 @@
 defmodule ApplicationRouter do
   use Dynamo.Router
 
+  import KeyValue
+  import RoutesFile 
+
   prepare do
     # Pick which parts of the request you want to fetch
     # You can comment the line below if you don't need
@@ -11,34 +14,6 @@ defmodule ApplicationRouter do
   # It is common to break your Dynamo into many
   # routers, forwarding the requests between them:
   # forward "/posts", to: PostsRouter
-
-  defmodule RoutesFile do
-    def path do
-      "/home/ajclayton/Dropbox/projectTynamo/routes.txt"
-    end
-    def routes do
-      strArray = (String.split(File.read!(RoutesFile.path), "\n"))
-      strLen = length strArray
-      List.delete_at strArray,strLen-1
-    end
-  end
-
-  defmodule KeyValue do
-    def mapTo(strList) do
-      Enum.map strList, fn val -> toKeyValue(val) end
-    end
-    def toKeyValue(str) do
-      [head | tail] = String.split(str, ",")
-      [tail | _] = tail
-      {head,tail}
-    end
-    def print(myList) do
-      lc { key, value} inlist myList do
-        IO.puts key <> ":" <> value 
-      end
-    end
-  end
-
 
   get "/" do
     conn = conn.assign(:title, "Welcome to Tynamo!")
