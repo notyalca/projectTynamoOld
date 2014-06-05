@@ -1,9 +1,6 @@
 defmodule ApplicationRouter do
   use Dynamo.Router
 
-  import KeyValue
-  import RoutesFile 
-
   prepare do
     # Pick which parts of the request you want to fetch
     # You can comment the line below if you don't need
