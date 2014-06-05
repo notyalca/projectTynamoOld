@@ -1,8 +1,11 @@
 # ProjectTynamo
 
-This is a project built with Elixir that uses Dynamo to serve web requests.
+[![Build Status](https://travis-ci.org/notyalca/projectTynamo.svg?branch=master)](https://travis-ci.org/notyalca/projectTynamo)
 
-Resources:
+REST API Sim with Dropbox-driven Configuration.
+Build with Dynamo (an Elixir project).
+
+Elixir and Dynamo Resources:
 
 * [Elixir website](http://elixir-lang.org/)
 * [Elixir getting started guide](http://elixir-lang.org/getting_started/1.html)
